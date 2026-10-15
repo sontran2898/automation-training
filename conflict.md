@@ -1,4 +1,2 @@
-Line 1: original
-
-
+Line 1: from B
 
