@@ -1,17 +1,13 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/login.fixture';
 
-test('TC01: Form Authentication - Login successful with valid credentials', async ({ page }) => {
-    await page.goto('https://the-internet.herokuapp.com/login');
-    await page.getByLabel('Username').fill('tomsmith');
-    await page.getByLabel('Password').fill('SuperSecretPassword!');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page.locator('#flash')).toContainText('You logged into a secure area!');
+test('TC01: Form Authentication - Login successful with valid credentials', async ({ loginPage }) => {
+    await loginPage.openLoginPage();
+    await loginPage.login('tomsmith', 'SuperSecretPassword!');
+    await expect(loginPage.flash).toContainText('You logged into a secure area!');
 });
 
-test('TC02: Form Authentication - Login fail with invalid credentials', async ({ page }) => {
-    await page.goto('https://the-internet.herokuapp.com/login');
-    await page.getByLabel('Username').fill('toms');
-    await page.getByLabel('Password').fill('SuperSecretPassword!');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await expect(page.locator('#flash')).toContainText('Your username is invalid!');
+test('TC02: Form Authentication - Login fail with invalid credentials', async ({ loginPage }) => {
+    await loginPage.openLoginPage();
+    await loginPage.login('toms', 'SuperSecretPassword!');
+    await expect(loginPage.flash).toContainText('Your username is invalid!');
 });
