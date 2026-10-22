@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures/checkboxes.fixture';
+import { test, expect } from '../fixtures/checkboxes.fixture';
 
 test('TC03: Checkboxes - Check to a box', async ({ checkboxesPage }) => {
     await checkboxesPage.openCheckboxesPage();

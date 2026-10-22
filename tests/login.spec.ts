@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures/login.fixture';
+import { test, expect } from '../fixtures/login.fixture';
 
 test('TC01: Form Authentication - Login successful with valid credentials', async ({ loginPage }) => {
     await loginPage.openLoginPage();
