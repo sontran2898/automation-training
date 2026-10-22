@@ -5,7 +5,6 @@ export const test = base.extend<{multiselectPage: MultiselectPage;
 }>({
     multiselectPage: async ({ page }, use) => {
         const multiselectPage = new MultiselectPage(page);
-        await multiselectPage.openMultiselectPage();
         await use(multiselectPage);
     }
 });
