@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/multiselect.fixture';
+import { test, expect } from '../fixtures/multiSelect.fixture';
 
 test('TC05: Dropdown - Select multiple options', async ({ multiselectPage }) => {
     await multiselectPage.openMultiselectPage();

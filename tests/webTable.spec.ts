@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/webtable.fixture';
+import { test, expect } from '../fixtures/webTable.fixture';
 
 test('TC08: Web Table - Validate largest due person from a table', async ({ webTablePage }) => {
     await webTablePage.openWebTablePage();

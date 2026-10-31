@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { WebTablePage } from '../pages/webtable.page';
+import { WebTablePage } from '../pages/webTable.page';
 
 export const test = base.extend<{ webTablePage: WebTablePage }>({
     webTablePage: async ({ page }, use) => {

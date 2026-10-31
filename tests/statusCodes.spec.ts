@@ -1,4 +1,4 @@
-import { test, expect } from '../fixtures/statuscodes.fixture';
+import { test, expect } from '../fixtures/statusCodes.fixture';
 
 test('TC06: Hyperlink - Status codes navigation', async ({ statusCodesPage }) => {
     await statusCodesPage.openStatusCodesPage();
