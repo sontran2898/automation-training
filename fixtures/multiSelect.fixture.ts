@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { MultiselectPage } from '../pages/multiselect.page';
+import { MultiselectPage } from '../pages/multiSelect.page';
 
 export const test = base.extend<{multiselectPage: MultiselectPage;
 }>({

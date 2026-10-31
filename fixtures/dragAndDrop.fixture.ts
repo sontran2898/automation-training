@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { DragAndDropPage } from '../pages/draganddrop.page';
+import { DragAndDropPage } from '../pages/dragAndDrop.page';
 
 export const test = base.extend<{dragAndDropPage: DragAndDropPage;}>({
     dragAndDropPage: async ({ page }, use) => {
