@@ -7,7 +7,9 @@ export class TodoPage {
     readonly itemLabels: Locator;
     readonly footer: Locator;
     readonly clearCompletedButton: Locator;
-
+    readonly allFilter: Locator;
+    readonly activeFilter: Locator;
+    readonly completedFilter: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -16,7 +18,9 @@ export class TodoPage {
         this.itemLabels = page.getByTestId('todo-item-label');
         this.footer = page.getByTestId('footer');
         this.clearCompletedButton = page.getByRole('button', { name: 'Clear completed' });
-
+        this.allFilter = page.getByRole('link', { name: 'All', exact: true });
+        this.activeFilter = page.getByRole('link', { name: 'Active', exact: true });
+        this.completedFilter = page.getByRole('link', { name: 'Completed', exact: true });
     }
     async openTodoPage() {
         await this.page.goto('https://todomvc.com/examples/react/dist/');
