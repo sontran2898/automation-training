@@ -27,4 +27,8 @@ export class TodoPage {
     toggleOf(text: string): Locator {
         return this.todoItem(text).getByTestId('todo-item-toggle');
     }
+    deleteButtonOf(text: string): Locator {
+        return this.todoItem(text).getByTestId('todo-item-button');
+    }
+
 }
