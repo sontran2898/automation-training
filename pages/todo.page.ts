@@ -6,6 +6,8 @@ export class TodoPage {
     readonly items: Locator;
     readonly itemLabels: Locator;
     readonly footer: Locator;
+    readonly clearCompletedButton: Locator;
+
 
     constructor(page: Page) {
         this.page = page;
@@ -13,6 +15,8 @@ export class TodoPage {
         this.items = page.getByTestId('todo-item');
         this.itemLabels = page.getByTestId('todo-item-label');
         this.footer = page.getByTestId('footer');
+        this.clearCompletedButton = page.getByRole('button', { name: 'Clear completed' });
+
     }
     async openTodoPage() {
         await this.page.goto('https://todomvc.com/examples/react/dist/');
