@@ -30,5 +30,10 @@ export class TodoPage {
     deleteButtonOf(text: string): Locator {
         return this.todoItem(text).getByTestId('todo-item-button');
     }
-
+    labelOf(text: string): Locator {
+        return this.todoItem(text).getByTestId('todo-item-label');
+    }
+    editInputOf(text: string): Locator {
+        return this.todoItem(text).getByLabel('Edit todo');
+    }
 }
