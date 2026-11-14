@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { SliderPage } from '../pages/slider.page';
+import { SliderPage } from '../pages/SliderPage';
 
 export const test = base.extend<{sliderPage: SliderPage;}>({
     sliderPage: async ({ page }, use) => {
