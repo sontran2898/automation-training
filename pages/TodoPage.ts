@@ -25,6 +25,10 @@ export class TodoPage {
     async openTodoPage() {
         await this.page.goto('https://todomvc.com/examples/react/dist/');
     }
+    async reloadPage() {
+        await this.page.reload();
+    }
+
     async addTodo(text: string) {
         await this.newTodoInput.fill(text);
         await this.newTodoInput.press('Enter');
@@ -44,4 +48,5 @@ export class TodoPage {
     editInputOf(text: string): Locator {
         return this.todoItem(text).getByLabel('Edit todo');
     }
+    
 }
