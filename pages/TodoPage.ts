@@ -10,6 +10,7 @@ export class TodoPage {
     readonly allFilter: Locator;
     readonly activeFilter: Locator;
     readonly completedFilter: Locator;
+    readonly toggleAll: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -21,6 +22,7 @@ export class TodoPage {
         this.allFilter = page.getByRole('link', { name: 'All', exact: true });
         this.activeFilter = page.getByRole('link', { name: 'Active', exact: true });
         this.completedFilter = page.getByRole('link', { name: 'Completed', exact: true });
+        this.toggleAll = page.getByTestId('toggle-all');
     }
     async openTodoPage() {
         await this.page.goto('https://todomvc.com/examples/react/dist/');
